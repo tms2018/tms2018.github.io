@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.49.2" />
+
+    
+    
+    
+
+<title>React and the Web Animation API - KeyframeEffect • TS</title>
+
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.9181f25ed2263aeb878ec6f8a84f10c4ebb16150000fca8767308880bdde5ca0.css" integrity="sha256-kYHyXtImOuuHjsb4qE8QxOuxYVAAD8qHZzCIgL3eXKA=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://tms2018.github.io/">TS</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://tms2018.github.io//img/me.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+      </div>
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">TS</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/tms2018" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/timothy-michael-schmidt" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/5725762/lazyelephant" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://www.freecodecamp.org/lazyelephant"><i class="fab fa-free-code-camp fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://codepen.io/LazyElephant"><i class="fab fa-codepen fa-lg" aria-hidden="true"></i></a>
+	
+	
+</section>
+
+      </div>
+    </div>
+    <div class="copyright">
+  &copy; 2018 Timothy Schmidt.
+  <br />
+  Built with <a href="https://gohugo.io">Hugo</a> and modified <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>React and the Web Animation API - KeyframeEffect</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 3, 2016
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/react">react</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/waapi">waapi</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/development">development</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<p>In the last post, we saw the easy way to animate a DOM element by using the new <code>element.animate</code> method.  This is useful if you want to play simple animations on a single element, but what if you want to create more complex animations involving multiple elements?  Sure, you could set up event listeners to listen for one animation to finish to start the next, but there&rsquo;s a better way.</p>
+
+<p>The WAAPI includes three objects that can be used to create more complex animation effects: <code>KeyframeEffect</code>, <code>GroupEffect</code>, and <code>SequenceEffect</code>.  I&rsquo;m only going to look at <code>KeyframeEffect</code> in this post, but know that it will be used with the other two later.</p>
+
+<p>Unfortunately, as of June 2017, attempting to use <code>KeyframeEffect</code>s puts us firmly in polyfill territory.  It can be found on <a href="https://github.com/web-animations/web-animations-js">github</a> or on <a href="https://www.npmjs.com/package/web-animations-js">npm</a>.</p>
+
+<h2 id="creating-a-keyframeeffect">Creating a KeyframeEffect</h2>
+
+<p>If you&rsquo;re already familiar with the WAAPI, this section can be skipped. Otherwise, lets see how to make a keyframe effect.</p>
+
+<p>To create the <code>KeyframeEffect</code>, we use the new <code>KeyframeEffect</code> constructor available in the browser.  The syntax for creating one is as follows:</p>
+
+<pre><code class="language-javascript">const theEffect = new KeyframeEffect(elementToAnimate, keyframes, timingOptions);
+</code></pre>
+
+<p>Then, to run it we will create a new animation using this effect.  The animation constructor takes two arguments: the KeyframeEffect and a timeline. With the animation created, we can then use the animation methods (<code>play</code>, <code>pause</code>, <code>reverse</code>, etc.) to control playback.</p>
+
+<pre><code class="language-javascript">const theAnimation = new Animation(theEffect, document.timeline);
+theAnimation.play();
+</code></pre>
+
+<h2 id="keyframeeffect-and-react">KeyframeEffect and React</h2>
+
+<p>Now that we know how to make a playable animation with <code>KeyframeEffect</code>, it&rsquo;s pretty straightforward to make a basic animation in a react component.</p>
+
+<pre><code class="language-javascript">import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import 'web-animations-js/web-animations-next.min.js';
+
+class AnimatedDiv extends Component {
+    constructor() {
+        super();
+        this.toggleAnimation = this.toggleAnimation.bind(this);
+    }
+
+    componentDidMount() {
+        if(!this.ref) return;
+
+        let effect = new KeyframeEffect( this.ref, [{opacity:0},{opacity:1}], {duration: 500, fill:'both'} );
+        
+        this.animation = new Animation(effect, document.timeline);
+        this.animation.play();
+    }
+
+    toggleAnimation() {
+        if (this.animation) this.animation.reverse();
+    }
+
+    render() {
+        return (
+            &lt;div style={{
+                    height: 100,
+                    width: 100, 
+                    background: 'blue'
+                }} 
+                ref={(r) =&gt; this.ref=r}
+                onClick={this.toggleAnimation}&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+
+ReactDOM.render(&lt;AnimatedDiv /&gt;, document.getElementById('app'));
+</code></pre>
+
+<p>Easy, right?  In the next post, we&rsquo;ll look at how to play multiple <code>KeyframeEffect</code>s at the same time using <code>GroupEffect</code>s.  See you then!</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/react-and-the-web-animation-api---animating-children/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">React and the Web Animation API</span>
+    </a>
+    
+    
+    <a href="/posts/waapi-groupeffect-and-react/" class="navigation-next">
+      <span class="navigation-tittle">React and the Web Animation API - GroupEffect</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+
+    
+
+
+
+    </body>
+</html>

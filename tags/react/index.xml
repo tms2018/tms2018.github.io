@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on TS</title>
+    <link>https://tms2018.github.io/tags/react/</link>
+    <description>Recent content in React on TS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tms2018.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React and the Web Animation API - SequenceEffect</title>
+      <link>https://tms2018.github.io/posts/waapi-sequenceeffect-and-react/</link>
+      <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/posts/waapi-sequenceeffect-and-react/</guid>
+      <description>In the last several posts we&amp;rsquo;ve looked at the parts of the WAAPI and seen how to add them to React components. This post will introduce the final piece of the WAAPI that I&amp;rsquo;ll be covering, the SequenceEffect.
+SequenceEffects Like GroupEffects, the SequenceEffect is used to create a single animation from a collection of individual effects. The difference, as you probably figured out from the name, is that the animation effects are executed in sequence instead of in parallel.</description>
+    </item>
+    
+    <item>
+      <title>React and the Web Animation API - GroupEffect</title>
+      <link>https://tms2018.github.io/posts/waapi-groupeffect-and-react/</link>
+      <pubDate>Mon, 04 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/posts/waapi-groupeffect-and-react/</guid>
+      <description>Last time, I briefly went over KeyframeEffects and using one in a React component. I kept it brief because, on its own, there&amp;rsquo;s no benefit to using a KeyframeEffect instead of element.animate. But this time, we&amp;rsquo;re going to see one of the reasons they&amp;rsquo;re useful by looking at a new part of the WAAPI, the GroupEffect.
+GroupEffects So far we&amp;rsquo;ve only seen single animations acting on individual elements. GroupEffects provide a convenient way to control multiple animations at the same time.</description>
+    </item>
+    
+    <item>
+      <title>React and the Web Animation API - KeyframeEffect</title>
+      <link>https://tms2018.github.io/posts/waapi-keyframeeffect-and-react/</link>
+      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/posts/waapi-keyframeeffect-and-react/</guid>
+      <description>In the last post, we saw the easy way to animate a DOM element by using the new element.animate method. This is useful if you want to play simple animations on a single element, but what if you want to create more complex animations involving multiple elements? Sure, you could set up event listeners to listen for one animation to finish to start the next, but there&amp;rsquo;s a better way.</description>
+    </item>
+    
+    <item>
+      <title>React and the Web Animation API</title>
+      <link>https://tms2018.github.io/posts/react-and-the-web-animation-api---animating-children/</link>
+      <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/posts/react-and-the-web-animation-api---animating-children/</guid>
+      <description>The web animation api is coming along and, with the polyfill, is supported in modern browsers. So, it seems like a good time to learn to integrate it into my current favorite front end library, React. But, the WAAPI works directly on DOM elements, which means it&amp;rsquo;s necessary to get access to them. This can be done in a couple ways.
+Refs to Rendered Elements If the component renders a DOM element directly, it&amp;rsquo;s easy enough to get a ref to the element.</description>
+    </item>
+    
+  </channel>
+</rss>

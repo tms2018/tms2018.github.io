@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on TS</title>
+    <link>https://tms2018.github.io/portfolio/</link>
+    <description>Recent content in Projects on TS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tms2018.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PAL&#39;s Dollhouse</title>
+      <link>https://tms2018.github.io/portfolio/pals-doll-house/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/portfolio/pals-doll-house/</guid>
+      <description>A client&amp;rsquo;s side hussle/website I built with Wordpress/WooCommerce and provide ongoing support as needed.</description>
+    </item>
+    
+    <item>
+      <title>English/Thai Dictionary</title>
+      <link>https://tms2018.github.io/portfolio/thai-dictionary/</link>
+      <pubDate>Tue, 30 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/portfolio/thai-dictionary/</guid>
+      <description>Created using the Ionic Framework and Sqlite, this dictionary provides autocompleted search as well as the ability to search for entire paragraphs of words at the same time.</description>
+    </item>
+    
+    <item>
+      <title>English/Thai Dictionary Crawler</title>
+      <link>https://tms2018.github.io/portfolio/thai-crawler/</link>
+      <pubDate>Tue, 30 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/portfolio/thai-crawler/</guid>
+      <description>A one-off crawler used to download the 26.6k words used in the English/Thai dictionary app.</description>
+    </item>
+    
+    <item>
+      <title>Thai-Tokenizer</title>
+      <link>https://tms2018.github.io/portfolio/thai-tokenizer/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/portfolio/thai-tokenizer/</guid>
+      <description>The hardest part about reading thai sentences is the lack of spaces between words. This tokenizer will break thai sentences down into individual words for easier lookup.</description>
+    </item>
+    
+    <item>
+      <title>ML Exploration</title>
+      <link>https://tms2018.github.io/portfolio/ml-notebooks/</link>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/portfolio/ml-notebooks/</guid>
+      <description>Experimentation with Deep/Machine Learning using Python and Julia.</description>
+    </item>
+    
+    <item>
+      <title>D3 Charts</title>
+      <link>https://tms2018.github.io/portfolio/fcc-d3/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/portfolio/fcc-d3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FreeCodeCamp Front End Projects</title>
+      <link>https://tms2018.github.io/portfolio/fcc-frontend/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/portfolio/fcc-frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Free Code Camp Microservice Projects</title>
+      <link>https://tms2018.github.io/portfolio/fcc-node/</link>
+      <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/portfolio/fcc-node/</guid>
+      <description> Timestamp Service - Convert Unix timestamps to natural language dates and vice versa. File Size Service - Return the size in bytes of an uploaded file. Header Parser Service - Parse the request header for the IP, Accept Language, and User Agent Image Search Service - Query the google image search api. URL Shortening Service - A service similar to TinyURL or bit.ly for generating short URLs.  </description>
+    </item>
+    
+    <item>
+      <title>Unity</title>
+      <link>https://tms2018.github.io/portfolio/unity/</link>
+      <pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://tms2018.github.io/portfolio/unity/</guid>
+      <description>Unity is a widely used game engine for building games with C#. The (very basic) prototypes I made include:
+ An Angry Birds style physics game A vertical scrolling space shooter Break Out An imitation of Mike Tyson&amp;rsquo;s Punch Out  </description>
+    </item>
+    
+  </channel>
+</rss>
